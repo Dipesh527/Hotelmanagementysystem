@@ -24,6 +24,7 @@
                             <th>Food Name</th>
                             <th>Price</th>
                             <th>Quantity</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
 
@@ -37,6 +38,11 @@
                             <td>{{ $order->foodname }}</td>
                             <td>{{ $order->price }}</td>
                             <td>{{ $order->quantity}}</td>
+                            <td>
+                                    
+                                    <a class="btn btn-primary" href="{{ url('sendMessage') }}">Confirm</a>
+                            
+                            </td>
                         </tr>
                         @endforeach
                        

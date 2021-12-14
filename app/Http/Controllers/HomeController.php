@@ -8,6 +8,7 @@ use App\Models\Food;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 class HomeController extends Controller
@@ -75,6 +76,8 @@ class HomeController extends Controller
     }
     public function orders(Request $request)
     {
+        $user = Auth::user();
+        $user_id = $user->id;
         foreach($request->foodname as $key=>$foodname)
         {
 
@@ -87,6 +90,8 @@ class HomeController extends Controller
         $data->number = $request->number;
         $data->address = $request->address;
         $data->save();
+        DB::table('carts')->where('user_id',$user_id)->delete();
+
         return redirect()->back();
 
     }

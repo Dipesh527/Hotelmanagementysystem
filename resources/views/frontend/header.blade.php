@@ -41,8 +41,8 @@
                         <li class="scroll-to-section">
                             @auth
                             <a href="{{ url('showcart', Auth::user()->id) }}">
-
                                 Cart[{{ $count }}]
+
                             </a>
                             @endauth
                              @guest
@@ -52,8 +52,17 @@
 
                         <li>
                             @auth
-                            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                        @else
+
+                            <li class="text-sm text-gray-700 dark:text-gray-500 ">
+                                
+                                    <x-app-layout>
+
+                                    </x-app-layout>
+                            
+                   
+                            <li
+                            
+                            @else
                         <li>
                             <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
                         </li>

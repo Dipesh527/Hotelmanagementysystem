@@ -34,7 +34,7 @@
                                             <input type="text" name="quantity[]" value="{{  $data->quantity}}" hidden>
                                             
                                             {{ $data->quantity }}</td>
-                                        <td> <img height="120px" src="food_image/{{ $data->image }}" alt=""></td>
+                                        <td> <img  src="food_image/{{ $data->image }}" height="50px" width="50px"  alt=""></td>
                                         <td>{{ $data->description }}</td>
                                         
                                     </tr>
@@ -48,20 +48,24 @@
                         <div>
                             <div class="container" id="appear" style="position: relative; display:none;">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-md-4">
                                         
-                                            <div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        
+                                            <div class="form-group">
                                                 <label for="name">Name</label>
-                                                <input type="text" name=" name" placeholder="Name" required>
+                                                <input class="form-control" type="text" name=" name" placeholder="Name" required>
                                             </div>
-                                            <div>
-                                                <label for="number">Name</label>
-                                                <input type="text" name="number" placeholder="Number" required>
+                                            <div class="form-group">
+                                                <label for="number">Number</label>
+                                                <input type="text" class="form-control" name="number" placeholder="Number" required>
                                             </div>
-                                            <div>
-                                                <label for="address">Name</label>
-                                                <input type="text" name=" address" placeholder="Address" required>
+                                            <div class="form-group">
+                                                <label for="address">Address</label>
+                                                <input type="text" class="form-control" name=" address" placeholder="Address" required>
                                             </div>
+                                            
                                             <button type="submit" class="btn btn-success">Order Conform</button>
                                             
                                 </form
